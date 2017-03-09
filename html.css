@@ -16,6 +16,7 @@ body
 	font-family: "Roboto", "Open Sans", Arial;
 	padding: 0px;
 	margin: 0px;
+	width: 100%;
 }
 
 /**
@@ -106,6 +107,7 @@ section > article > p
  */
 section[dialog]
 {
+	background-color: #FDFDFD;
 	width: initial;
 	height: initial;
 	position: fixed;
@@ -129,10 +131,28 @@ section[dialog] > p
 	font-size: 12px;
 }
 
-section[dialog] > button[flat]
+/**
+ * Dialog Close Button (Same visual style as flat button)
+ */
+section[dialog] > button[close]
 {
+	outline: none;
+	border: none;
+	color: var(--html-color-accent);
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: none;
 	margin: 8px 16px 16px 16px;
 	padding: 10px 12px 10px 12px;
+}
+
+section[dialog] > button[close]:active
+{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+section[dialog] > button[close]:active
+{
+	color: #FF0000;
 }
 
 /**
@@ -188,11 +208,14 @@ button[flat]:active
 button[float]
 {
 	margin: 0px;
-	padding: 16px 20px 16px 20px;
+	padding: 0px;
+	font-size: 20px;
+	width: 48px;
+	height: 48px;
+	line-height:48px;
 	border-radius: 50%;
 	font-weight: normal;
 	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
-	font-size: 18px;
 	vertical-align: middle;
 }
 
@@ -202,14 +225,63 @@ button[float]:hover
 }
 
 /**
- * Menu Button
+ * Dropdown Menu Button
  */
 button[menu]
 {
+	color: #000;
+	background-color: rgba(0, 0, 0, 0);
+	margin: 0px;
+	padding: 0px;
+	font-size: 20px;
+	width: 48px;
+	height: 48px;
+	line-height:48px;
 	border-radius: 50%;
+	font-weight: normal;
+	vertical-align: middle;
+	box-shadow: none;
+}
+
+button[menu]:before
+{
+	content:"≡";
+}
+
+button[menu]:hover > menu
+{
+	transform: scaleY(1);
+	transition: all 200ms ease-in-out;
+}
+
+button[menu] > menu
+{
+	transform: scaleY(0);
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	background-color: #FDFDFD;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
+	transition: all 200ms ease-in-out;
+	transform-origin: 50% 0px;
+}
+
+button[menu] > menu > A
+{
+	font-size: 12px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.87);
+	margin: 0px;
+	padding: 0px;
+}
+
+button[menu] > menu > A:active
+{
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 button[menu]:active
 {
 	background-color: rgba(0, 0, 0, 0.3);
 }
+
