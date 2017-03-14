@@ -103,59 +103,6 @@ section > article > p
 }
 
 /**
- * Dialog
- */
-section[dialog]
-{
-	background-color: #FDFDFD;
-	width: initial;
-	height: initial;
-	position: fixed;
-	right: 32px;
-	button: 32px;
-	border-radius: 0px;
-	box-shadow: 0px 8px 24px 4px rgba(0, 0, 0, 0.3);
-}
-
-section[dialog] > h1
-{
-	margin: 0px;
-	font-size: 24px;
-	padding: 24px 16px 12px 16px;
-}
-
-section[dialog] > p
-{
-	margin: 0px;
-	padding: 8px 16px 8px 16px;
-	font-size: 12px;
-}
-
-/**
- * Dialog Close Button (Same visual style as flat button)
- */
-section[dialog] > button[close]
-{
-	outline: none;
-	border: none;
-	color: var(--html-color-accent);
-	background-color: rgba(0, 0, 0, 0);
-	box-shadow: none;
-	margin: 8px 16px 16px 16px;
-	padding: 10px 12px 10px 12px;
-}
-
-section[dialog] > button[close]:active
-{
-	background-color: rgba(0, 0, 0, 0.2);
-}
-
-section[dialog] > button[close]:active
-{
-	color: #FF0000;
-}
-
-/**
  * Raised Button
  */
 button
@@ -248,16 +195,29 @@ button[menu]:before
 	content:"≡";
 }
 
-button[menu]:hover > menu
+button[menu]:focus + menu
 {
 	transform: scaleY(1);
 	transition: all 200ms ease-in-out;
 }
 
-button[menu] > menu
+button[menu]:focus + menu > li > A
+{
+	transform: scaleY(1);
+	transition: all 200ms ease-in-out;
+}
+
+button[menu]:not(:focus) + menu
 {
 	transform: scaleY(0);
-	display: block;
+	transition: all 200ms ease-in-out;
+}
+
+button[menu] + menu
+{
+	position: absolute;
+	display:table;
+	table-layout: fixed; 
 	margin: 0px;
 	padding: 0px;
 	background-color: #FDFDFD;
@@ -266,16 +226,27 @@ button[menu] > menu
 	transform-origin: 50% 0px;
 }
 
-button[menu] > menu > A
+button[menu] + menu > li
 {
+	list-style: none;
+	padding: 10px;
+}
+
+button[menu] + menu > li > A
+{
+	transform: scaleY(0);
 	font-size: 12px;
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.87);
-	margin: 0px;
-	padding: 0px;
+	padding: 12px;
 }
 
-button[menu] > menu > A:active
+button[menu] + menu > li > A:hover
+{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+button[menu] + menu > li > A:active
 {
 	background-color: rgba(0, 0, 0, 0.3);
 }
