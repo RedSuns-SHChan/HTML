@@ -1,5 +1,5 @@
 # Hyper-Text Material Library (HTML)
- ----
+
 Hyper-Text Material Libary is a project which is going to implement material design with a single CSS-3 file and a few specified HTML structure.
 Almost zero javascript when using all features, and don't need to remember complicated CSS class name.
 Keep the file content clean and easy to maintain.
