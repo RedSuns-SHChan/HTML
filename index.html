@@ -136,8 +136,20 @@
 			<article>
 				<h1>Input Component</h1>
 				<p>Other input components besides button.</p>
-				
-				<input type="text"><label>Hint</label>
+				<p>As the label effect is quite complicated to implement with pure CSS.</p>
+				<p>You need to include the label and input tag in one div area.</p>
+				<br>
+				<p>Just like this:</p>
+				<pre>
+&lt;div input&gt;
+	&lt;label&gt;LABEL&lt;/label&gt;
+	&lt;input type="demo"&gt;
+&lt;/div&gt;
+				</pre>
+				<div input>
+					<input type="text" required>
+					<label>Hint</label>
+				</div>
 			</article>
 		</section>
 	</body>

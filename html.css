@@ -275,12 +275,55 @@ section[grid]
 	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.3);
 }
 
-input[type="text"]
+div[input]
+{
+	position: relative;
+}
+
+div[input] > input[type="text"]
 {
 	outline: none;
 	border: none;
-	border-bottom: 1px solid grey;
+	border-bottom: 2px solid grey;
 	margin: 8px;
 	padding: 4px;
+	transition: all 200ms;
+	background-color: rgba(0, 0, 0, 0);
 }
 
+div[input] > input[type="text"]:focus
+{
+	border-bottom: 2px solid var(--html-color-accent);
+	transition: all 200ms;
+}
+
+div[input] > input[type="text"]:not(:valid) + label
+{
+	position: absolute;
+	left: 12px;
+	top: 8px;
+	color: grey;
+	transition: all 200ms;
+	transform-origin: 0px 0px;
+}
+
+div[input] > input[type="text"]:focus + label
+{
+	position: absolute;
+	left: 12px;
+	color: var(--html-color-accent);
+	transition: all 200ms;
+	font-size: 60%;
+	top: 0px;
+}
+
+div[input] > input[type="text"]:valid:not(:focus) + label
+{
+	
+	position: absolute;
+	left: 12px;
+	color: grey;
+	transition: all 200ms;
+	font-size: 60%;
+	top: 0px;
+}
