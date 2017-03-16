@@ -13,7 +13,7 @@ Keep the file content clean and easy to maintain.
 ### How to use?
  It's very easy to use this framework. Just import as the normal CSS file and you will see the effect :)  
  If you are new to HTML, take a look at this code:  
- > <link rel="stylesheet" type="text/css" href="./html.css">
+ > &lt;link rel="stylesheet" type="text/css" href="./html.css"&gt;
 
 ### Implemented Components
  1) Action Bar
