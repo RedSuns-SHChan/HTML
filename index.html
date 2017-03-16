@@ -52,7 +52,8 @@
 			<h1>Dialog demo</h1>
 			<p>The content of dialog.</p>
 			<p>Your Javascript to implement the close feature.</p>
-			<button flat onclick="this.parentElement.close();">CLOSE</button>
+			<pre code>this.parentElement.close()</pre>
+			<button flat onclick="this.parentElement.close()">CLOSE</button>
 		</dialog>
 		<section>
 			<article>
@@ -140,7 +141,7 @@
 				<p>You need to include the label and input tag in one div area.</p>
 				<br>
 				<p>Just like this:</p>
-				<pre>
+				<pre code>
 &lt;div input&gt;
 	&lt;label&gt;LABEL&lt;/label&gt;
 	&lt;input type="demo"&gt;
@@ -149,6 +150,14 @@
 				<div input>
 					<input type="text" required>
 					<label>Hint</label>
+				</div>
+				<div input>
+					<input type="text" required>
+					<label>Text 2</label>
+				</div>
+				<div input>
+					<textarea required></textarea>
+					<label>Textarea</label>
 				</div>
 			</article>
 		</section>

@@ -280,8 +280,10 @@ div[input]
 	position: relative;
 }
 
-div[input] > input[type="text"]
+div[input] > input[type="text"],
+div[input] > textarea
 {
+	width: 97%;
 	outline: none;
 	border: none;
 	border-bottom: 2px solid grey;
@@ -291,23 +293,37 @@ div[input] > input[type="text"]
 	background-color: rgba(0, 0, 0, 0);
 }
 
-div[input] > input[type="text"]:focus
+div[input] > input[type="text"]:focus,
+div[input] > textarea:focus
 {
 	border-bottom: 2px solid var(--html-color-accent);
 	transition: all 200ms;
 }
 
-div[input] > input[type="text"]:not(:valid) + label
+div[input] > input[type="text"] + label,
+div[input] > textarea + label
+{
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	cursor: text;
+	pointer-events: none;
+}
+
+div[input] > input[type="text"]:not(:valid) + label,
+div[input] > textarea:not(:valid) + label
 {
 	position: absolute;
 	left: 12px;
-	top: 8px;
+	top: 10px;
 	color: grey;
 	transition: all 200ms;
 	transform-origin: 0px 0px;
 }
 
-div[input] > input[type="text"]:focus + label
+div[input] > input[type="text"]:focus + label,
+div[input] > textarea:focus + label
 {
 	position: absolute;
 	left: 12px;
@@ -317,13 +333,20 @@ div[input] > input[type="text"]:focus + label
 	top: 0px;
 }
 
-div[input] > input[type="text"]:valid:not(:focus) + label
+div[input] > input[type="text"]:valid:not(:focus) + label,
+div[input] > textarea:valid:not(:focus) + label
 {
-	
 	position: absolute;
 	left: 12px;
 	color: grey;
 	transition: all 200ms;
 	font-size: 60%;
 	top: 0px;
+}
+
+div[input] > textarea
+{
+	width: 97%;
+	min-height: 120px;
+	resize: vertical;
 }
